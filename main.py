@@ -31,7 +31,6 @@ print("""
 | -------- | -------- | -------- | -------- |""")
 for i in sorted_group[0:40]:
     [em, count] = i
-    name = emoji.demojize(em)
+    name = emoji.demojize(em).replace(':', '')
     perc = 100 * count/total
     print('|{} | {} | {} | {}% |'.format(em, name, count, '{:.2f}'.format(perc)))
-    
